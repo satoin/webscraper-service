@@ -1,0 +1,19 @@
+{
+  "name": "webscraper-service",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node --experimental-modules src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Lucas Menendez",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.2",
+    "puppeteer": "^13.0.1",
+    "unfluff": "^3.2.0"
+  }
+}
