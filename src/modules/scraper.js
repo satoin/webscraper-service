@@ -48,12 +48,18 @@ function parseHTML(html, rules) {
         // If rule item references multiple values, iterate overchilds of item 
         // selector getting its referenced attribute.
         if (ref.multiple) {
-            result[param] = $(ref.selector).map(function() { 
-                return !!ref.attr ? $(this).attr(ref.attr) : $(this).html();
+            result[param] = $(ref.selector).map(function() {
+                let el = $(this);
+
+                if (!!ref.attr) return el.attr(ref.attr)
+                return (el.html() || "").trim()
             }).toArray();
-        
         // Else, gets the attribute single value from current html element.
-        } else result[param] = $(ref.selector).attr(ref.attr);
+        } else {
+            let el = $(ref.selector);
+            if (!!ref.attr) result[param] = el.attr(ref.attr)
+            else result[param] = (el.html() || "").trim()
+        }
     });
     
     return result;

@@ -18,7 +18,8 @@ server.postRoute('/single-page', async (req, res) => {
     try {
         const result = await singlePage(url, rules);
         res.send(result);
-    } catch {
+    } catch(error) {
+        console.log(error)
         throw new Errors.InternalErr();
     }
 });

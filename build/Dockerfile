@@ -1,7 +1,7 @@
 FROM alpine:edge
 
-RUN mkdir -p /usr/src/crawler
-WORKDIR /usr/src/crawler
+RUN mkdir -p /usr/src/webscraper
+WORKDIR /usr/src/webscraper
 
 ENV PROD=true \
     PORT=8080 \

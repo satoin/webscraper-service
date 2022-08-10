@@ -29,7 +29,7 @@ To make the process of run it locally easiest, the repository includes a [Makefi
 
 #### Request
 ```sh
-curl -X POST http://localhost:8081/token/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d \
+curl -X POST http://localhost:8082/single-page \
    -H 'Content-Type: application/json' \
    -d '{"url": "http://.../", "rules": {"website":{"selector":"... > a","attr":"href","multiple":false},"social_links":{"selector":"... > a","attr":"href","multiple":true}}}'
 ```
